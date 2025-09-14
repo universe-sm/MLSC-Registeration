@@ -215,22 +215,6 @@ button:hover {
   }
 }
 
-@media (max-width: 576px) {
-  .form {
-    width: 90vw;
-  }
-  .text1 {
-    font-size: 24px;
-  }
-  input, select {
-    width: 100%;
-  }
-  button {
-    width: 90px;
-    height: 35px;
-    font-size: 16px;
-  }
-}
 
 @media (max-width: 400px) {
   .form {
@@ -240,4 +224,55 @@ button:hover {
     font-size: 30px;
   }
   
+}
+
+/* Portrait phones */
+@media (max-width: 576px) and (orientation: portrait) {
+  .form {
+    width: 85vw;        /* almost full width */
+    padding: 10px;
+    margin: 0 auto;
+  }
+  .text1 {
+    font-size: 30px;    /* readable in portrait */
+  }
+  input, select {
+    width: 100%;
+  }
+  button {
+    width: 40%;        /* full width for easier tapping */
+    height: 38px;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+}
+
+/* Landscape phones */
+@media (max-width: 576px) and (orientation: landscape) {
+  .form {
+    width: 90vw;             
+    max-width: 400px;        
+    padding: 10px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;               
+    height: auto;
+  }
+
+  .text1 {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  input, select, button {
+    width: 100%;            
+    box-sizing: border-box;  
+  
+
+  button {
+    height: 38px;
+    font-size: 16px;
+    margin: 0;              
+  }
 }
