@@ -92,7 +92,7 @@ body {
 
 input {
   font-family: "Segoe UI", "Roboto", "Poppins", sans-serif;
-  width: 90%;
+  width: 94%;
   max-width: 400px;
   height: 30px;
   border-radius: 2px;
@@ -115,7 +115,7 @@ input:hover {
 
 select {
   font-family: "Segoe UI", "Roboto", "Poppins", sans-serif;
-  width: 90%;
+  width: 95%;
   max-width: 405px;
   height: 35px;
   border-radius: 2px;
@@ -168,7 +168,7 @@ button:hover {
 @media (max-width: 1200px) {
   .form {
     width: 50vw;
-    left: 200px;
+    left: 200px;  /* still positioned */
   }
   .element1 {
     width: 80%;
@@ -178,63 +178,66 @@ button:hover {
 @media (max-width: 992px) {
   .form {
     width: 60vw;
-    left: 100px;
-    height: auto; /* safer for smaller screens */
+    left: 100px;   /* keep positioned */
+    height: auto;  /* allow growth */
   }
   .element1 {
     width: 85%;
   }
   button {
     left: 150px;
-    top: 420px;
+    top: auto;
+    bottom: 20px;
   }
 }
 
 @media (max-width: 768px) {
+  .main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .form {
-    width: 75vw;
-    left: 50px;
-    height: auto;  /* let content grow */
+    position: static;   /* drop absolute for proper centering */
+    width: 80vw;
+    height: auto;
+    margin: 0 auto;
   }
   .element1 {
-    width: 90%;
+    width: 95%;
   }
   button {
-    left: 50%;
-    top: auto;
-    bottom: 20px;
-    transform: translateX(-50%);
+    position: relative;   /* inline with content */
+    left: auto;
+    transform: none;
+    margin: 20px auto 0 auto;
+    bottom: auto;
   }
 }
 
 @media (max-width: 576px) {
   .form {
     width: 90vw;
-    left: 20px;
-    height: auto;
   }
   .text1 {
-    font-size: 28px;
+    font-size: 24px;
   }
   input, select {
-    width: 95%;
+    width: 100%;
   }
   button {
     width: 90px;
     height: 35px;
-    font-size: 18px;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 15px;
+    font-size: 16px;
   }
 }
 
 @media (max-width: 400px) {
   .form {
-    width: 95vw;
-    left: 10px;
+    width: 80vw;
   }
   .text1 {
-    font-size: 22px;
+    font-size: 30px;
   }
+  
 }
